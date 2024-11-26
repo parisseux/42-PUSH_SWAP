@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:51:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/25 16:10:22 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 17:23:44 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ft_validate_args(char **argv, int j, t_stack **stack,char **split_argv)
 			ft_cleanup(stack, split_argv);
 			return (0);
 		}
-		value = ft_atoi(argv[j]);
+		value = ft_atol(argv[j]);
 		ft_create_or_add_back(stack, value);
 		j++;	
 	}
@@ -86,6 +86,7 @@ int main(int argc, char **argv)
 	}
 	if (!ft_check_stack(&stack_a))
 		ft_order(&stack_a, &stack_b);
+//	print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

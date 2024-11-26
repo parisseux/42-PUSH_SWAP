@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:13:06 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/25 15:37:23 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 18:04:16 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	*ft_new_node(int value)
 	head->data = value;
 	head->next = NULL;
 	head->prev = NULL;
+	
 	return (head);
 }
 

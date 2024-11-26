@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:37:20 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/25 16:10:04 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 16:52:28 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 
 typedef struct s_stack
 {
+	int				above_median;
+	int				cheapest;
+	int 			index;
+	struct s_stack	*target_node;
+	int				push_cost;
 	int				data;
 	struct s_stack	*prev;
 	struct s_stack	*next;
@@ -42,8 +47,14 @@ void	ft_create_or_add_front(t_stack **head, int value);
 void    ft_delete_first_node(t_stack **head);
 void 	ft_print_str(char *str);
 int 	ft_find_index_of_max(t_stack *head);
+int		ft_find_index_of_min(t_stack *head);
 int 	ft_validate_args(char **argv, int j, t_stack **stack,char **split_argv);
 void	ft_cleanup(t_stack **stack, char **split_argv);
+long	ft_atol(const char *str);
+void    ft_index(t_stack *stack);
+void    ft_target_b(t_stack *stack_a, t_stack *stack_b);
+t_stack *ft_find_max(t_stack *stack);
+t_stack *ft_find_min(t_stack *stack);
 
 //operations 
 void 	ft_swap(t_stack **stack);
@@ -64,8 +75,11 @@ void    ft_rr(t_stack **head_a, t_stack**head_b);
 //fonctions to order stack
 void	ft_order(t_stack **stack_a, t_stack **stack_b);
 int 	ft_check_stack(t_stack **head);
-void    ft_order_stack_size_2(t_stack **head);
 void    ft_order_stack_size_3(t_stack **head);
-//void ft_order_big_stack(t_stack **stack_a, t_stack **stack_b);
+void	ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b);
+void 	ft_order_big_stack(t_stack **stack_a, t_stack **stack_b);
+t_stack *init_nodes_a(t_stack **stack_a, t_stack **stack_b);
+t_stack *init_nodes_b(t_stack **stack_a, t_stack **stack_b);
+
 
 #endif

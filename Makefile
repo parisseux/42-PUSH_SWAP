@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
+#    By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 11:37:38 by pchatagn          #+#    #+#              #
-#    Updated: 2024/11/25 14:47:46 by parissachat      ###   ########.fr        #
+#    Updated: 2024/11/26 17:06:48 by pchatagn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,18 @@ SRCDIR = src
 OBJDIR = obj
 
 FILES = main.c \
-        stack_utils.c \
 		check_input.c \
-		stack_utils2.c \
 		utils.c \
-		order_stack.c \
+        stack_utils.c \
+		stack_utils2.c \
+		stack_utils3.c \
 		swap.c \
 		rotate.c \
 		reverse_rotate.c \
-		push.c 
+		push.c \
+		order_stack.c \
+		order_utils.c \
+		order_utils2.c
 		
 
 LIBFT = $(LIBDIR)/libft/libft.a

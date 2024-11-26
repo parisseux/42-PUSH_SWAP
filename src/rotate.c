@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:24:16 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/25 14:36:13 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 15:28:24 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

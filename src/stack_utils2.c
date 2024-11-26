@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils2.c                                      :+:      :+:    :+:   */
+/*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:25:36 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/25 14:46:59 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 15:28:58 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,20 @@ int ft_check_stack(t_stack **head)
         temp = temp->next;
     }
     return (1);
+}
+
+t_stack *ft_find_max(t_stack *stack)
+{
+    t_stack *max;
+
+    if (!stack)
+        return (NULL);
+    max = stack;    
+    while (stack)
+    {
+        if (max->data < stack->data)
+            max = stack;
+        stack = stack->next;
+    }
+    return (max);
 }

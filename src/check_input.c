@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:55:40 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/20 17:12:03 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/26 15:27:10 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
