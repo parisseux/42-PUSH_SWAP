@@ -3,23 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+         #
+#    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 11:37:38 by pchatagn          #+#    #+#              #
-#    Updated: 2024/11/26 17:06:48 by pchatagn         ###   ########.fr        #
+#    Updated: 2024/11/27 15:51:19 by parissachat      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 LIBDIR = libraries
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I$(LIBDIR)/libft -I$(LIBDIR)/ft_printf
+CFLAGS = -Wall -Werror -Wextra -I$(LIBDIR)/libft -I$(LIBDIR)/ft_printf -g
 RM = rm -f
 
 SRCDIR = src
 OBJDIR = obj
 
 FILES = main.c \
+		create_stack.c \
 		check_input.c \
 		utils.c \
         stack_utils.c \

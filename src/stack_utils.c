@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:13:06 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/26 18:04:16 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:14:01 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ t_stack	*ft_new_node(int value)
 	head->data = value;
 	head->next = NULL;
 	head->prev = NULL;
+	head->above_median = 0;
+	head->cheapest = 0;
+	head->index = 0;
+	head->push_cost = 0;
+	head->target_node = NULL;
 	
 	return (head);
 }
@@ -76,7 +81,7 @@ void print_stack(t_stack *head)
     t_stack *temp = head;
     while (temp)
     {
-        printf("%d ", temp->data);
+        printf("%ld ", temp->data);
         temp = temp->next;
     }
     printf("\n");

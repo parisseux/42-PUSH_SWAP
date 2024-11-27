@@ -3,28 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:55:40 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/26 15:27:10 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:06:58 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_split(char **split)
-{
-	int i = 0;
-
-	if (!split)
-		return;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}
 int ft_check_doublon(t_stack **head)
 {
     t_stack *temp;

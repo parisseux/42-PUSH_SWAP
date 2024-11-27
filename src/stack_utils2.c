@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:25:36 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/26 15:28:58 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:15:46 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,11 @@ void   ft_delete_first_node(t_stack **head)
 int ft_find_index_of_max(t_stack *head)
 {
     int index;
-    int max;
+    long max;
     int count;
 
+    if (!head)
+        return (-1);
     max = head->data;
     index = 1;
     count =  0;

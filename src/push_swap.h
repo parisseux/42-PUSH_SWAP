@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:37:20 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/26 16:52:28 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:13:14 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,16 @@ typedef struct s_stack
 	int 			index;
 	struct s_stack	*target_node;
 	int				push_cost;
-	int				data;
+	long				data;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
 
 //fonctions utils
 t_stack	*ft_new_node(int value);
+t_stack	*ft_create_stack_a(int argc, char **argv);
 void	ft_create_or_add_back(t_stack **head, int value);
+void	ft_create_or_add_front(t_stack **head, int value);
 void    ft_free_stack(t_stack **stack);
 void	print_stack(t_stack *head);
 int 	ft_check_number(char *argv);
@@ -43,18 +45,15 @@ int 	ft_check_doublon(t_stack **head);
 void    ft_error_message(void);
 void	ft_free_split(char **split);
 int		ft_size_stack(t_stack *stack);
-void	ft_create_or_add_front(t_stack **head, int value);
 void    ft_delete_first_node(t_stack **head);
 void 	ft_print_str(char *str);
+t_stack *ft_find_max(t_stack *stack);
+t_stack *ft_find_min(t_stack *stack);
 int 	ft_find_index_of_max(t_stack *head);
 int		ft_find_index_of_min(t_stack *head);
 int 	ft_validate_args(char **argv, int j, t_stack **stack,char **split_argv);
 void	ft_cleanup(t_stack **stack, char **split_argv);
 long	ft_atol(const char *str);
-void    ft_index(t_stack *stack);
-void    ft_target_b(t_stack *stack_a, t_stack *stack_b);
-t_stack *ft_find_max(t_stack *stack);
-t_stack *ft_find_min(t_stack *stack);
 
 //operations 
 void 	ft_swap(t_stack **stack);
@@ -77,9 +76,19 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b);
 int 	ft_check_stack(t_stack **head);
 void    ft_order_stack_size_3(t_stack **head);
 void	ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b);
-void 	ft_order_big_stack(t_stack **stack_a, t_stack **stack_b);
-t_stack *init_nodes_a(t_stack **stack_a, t_stack **stack_b);
-t_stack *init_nodes_b(t_stack **stack_a, t_stack **stack_b);
+void 	ft_order_big_stack(t_stack **stack_a, t_stack **st);
+void init_nodes_a(t_stack **stack_a, t_stack **stack_b);
+//t_stack *init_nodes_b(t_stack **stack_a, t_stack **stack_b);
+void 	move_a_to_b(t_stack **stack_a, t_stack **stack_b);
+//void 	move_b_to_a(t_stack **stack_a, t_stack **stack_b);
+void    ft_node_at_the_top_stack_a(t_stack **stack, t_stack *node);
+void    ft_node_at_the_top_stack_b(t_stack **stack, t_stack *node);
+void    ft_index(t_stack **stack);
+void    ft_target_b(t_stack **stack_a, t_stack **stack_b);
+void    ft_cost_analysis(t_stack **stack_a, t_stack **stack_b);
+void    ft_find_cheapest(t_stack **stack);
+void 	rotate_node_and_target_node(t_stack **stack_a, t_stack **stack_b, t_stack *node);
+void 	reverse_rotate_node_and_target_node(t_stack **stack_a, t_stack **stack_b, t_stack *node);
 
 
 #endif

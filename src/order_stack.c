@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/26 17:59:15 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:44:11 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void    ft_order(t_stack **stack_a, t_stack **stack_b)
     }
     else if (ft_size_stack(*stack_a) == 4)
         ft_order_stack_size_4(stack_a, stack_b);
-    // else if (ft_size_stack(*stack_a) >= 5)
-    //     ft_order_big_stack(stack_a, stack_b);
+     else if (ft_size_stack(*stack_a) >= 5)
+        ft_order_big_stack(stack_a, stack_b);
 }
 void    ft_order_stack_size_3(t_stack **head)
 {
@@ -42,9 +42,6 @@ void    ft_order_stack_size_3(t_stack **head)
 
 void    ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b)
 {
-    int index_min;
-    
-    index_min = ft_find_index_of_min(*stack_a);
     if (ft_find_index_of_min(*stack_a) == 1)
         ft_pb(stack_a, stack_b);
     else if (ft_find_index_of_min(*stack_a) == 2)
@@ -75,13 +72,16 @@ void ft_order_big_stack(t_stack **stack_a, t_stack **stack_b)
         init_nodes_a(stack_a, stack_b);
         move_a_to_b(stack_a, stack_b);
     }
+
     ft_order_stack_size_3(stack_a);
-    while (*stack_b)
+    print_stack(*stack_a);
+    print_stack(*stack_b);
+   /* while (*stack_b)
     {
         init_nodes_b(stack_a, stack_b);
         move_b_to_a(stack_a, stack_b);
     }
-    min_on_top(stack_a);
+    min_on_top(stack_a);*/
 }
 
 
