@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/27 15:44:11 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/28 17:03:53 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,11 @@ void ft_order_big_stack(t_stack **stack_a, t_stack **stack_b)
 {
     ft_pb(stack_a, stack_b);
     ft_pb(stack_a, stack_b);
-    while (ft_size_stack(*stack_a) > 3 && !ft_check_stack(stack_a))
+    while (ft_size_stack(*stack_a) > 3 && ft_check_stack(stack_a) == 0)
     {
         init_nodes_a(stack_a, stack_b);
         move_a_to_b(stack_a, stack_b);
     }
-
     ft_order_stack_size_3(stack_a);
     print_stack(*stack_a);
     print_stack(*stack_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:17:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/27 16:10:42 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/28 17:10:13 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,12 @@ void move_a_to_b(t_stack **stack_a, t_stack **stack_b)
         return ;
     temp = *stack_a;
     cheapest_node = NULL;
-    while (temp)
-    {
-        while (temp->cheapest == 0)
+    while (temp->cheapest == 0)
             temp = temp ->next;
-    }
-    
-    if (!cheapest_node)
-    {
-        ft_error_message();
-        return ;
-    }
     cheapest_node = temp;
-    if ((*stack_a)->above_median == 1 && (*stack_a)->target_node->above_median == 1)
+    if (cheapest_node->above_median == 1 && cheapest_node->target_node->above_median == 1)
         rotate_node_and_target_node(stack_a, stack_b, cheapest_node);
-    if ((*stack_a)->above_median == 0 && (*stack_a)->target_node->above_median == 0)
+    if (cheapest_node->above_median == 0 && cheapest_node->target_node->above_median == 0)
         reverse_rotate_node_and_target_node(stack_a, stack_b, cheapest_node);
     ft_node_at_the_top_stack_a(stack_a, cheapest_node);
     ft_node_at_the_top_stack_b(stack_b, cheapest_node->target_node);
