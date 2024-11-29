@@ -6,7 +6,7 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:37:20 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/27 16:13:14 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/29 10:14:56 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,21 @@ int 	ft_check_stack(t_stack **head);
 void    ft_order_stack_size_3(t_stack **head);
 void	ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b);
 void 	ft_order_big_stack(t_stack **stack_a, t_stack **st);
-void init_nodes_a(t_stack **stack_a, t_stack **stack_b);
-//t_stack *init_nodes_b(t_stack **stack_a, t_stack **stack_b);
+void 	init_nodes_a(t_stack **stack_a, t_stack **stack_b);
+void 	init_nodes_b(t_stack **stack_a, t_stack **stack_b);
 void 	move_a_to_b(t_stack **stack_a, t_stack **stack_b);
-//void 	move_b_to_a(t_stack **stack_a, t_stack **stack_b);
+void 	move_b_to_a(t_stack **stack_a, t_stack **stack_b);
 void    ft_node_at_the_top_stack_a(t_stack **stack, t_stack *node);
 void    ft_node_at_the_top_stack_b(t_stack **stack, t_stack *node);
 void    ft_index(t_stack **stack);
 void    ft_target_b(t_stack **stack_a, t_stack **stack_b);
-void    ft_cost_analysis(t_stack **stack_a, t_stack **stack_b);
+void    ft_target_a(t_stack **stack_a, t_stack **stack_b);
+void    ft_cost_analysis_a(t_stack **stack_a, t_stack **stack_b);
+void    ft_cost_analysis_b(t_stack **stack_a, t_stack **stack_b);
 void    ft_find_cheapest(t_stack **stack);
 void 	rotate_node_and_target_node(t_stack **stack_a, t_stack **stack_b, t_stack *node);
 void 	reverse_rotate_node_and_target_node(t_stack **stack_a, t_stack **stack_b, t_stack *node);
+void 	ft_min_on_top(t_stack **stack_a);
 
 
 #endif

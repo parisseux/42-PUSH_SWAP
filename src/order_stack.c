@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/28 17:03:53 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:39:31 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,19 @@ void ft_order_big_stack(t_stack **stack_a, t_stack **stack_b)
         move_a_to_b(stack_a, stack_b);
     }
     ft_order_stack_size_3(stack_a);
-    print_stack(*stack_a);
-    print_stack(*stack_b);
-   /* while (*stack_b)
+    while (*stack_b)
     {
         init_nodes_b(stack_a, stack_b);
         move_b_to_a(stack_a, stack_b);
     }
-    min_on_top(stack_a);*/
+    ft_index(stack_a);
+  //  print_stack(*stack_a);
+    ft_min_on_top(stack_a);
+   // print_stack(*stack_a);
+    if (ft_check_stack(stack_a) == 1)
+        printf("yeah\n");
+    else 
+        printf("pas bon\n");
 }
 
 

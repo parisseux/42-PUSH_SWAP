@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/28 17:07:21 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:42:55 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void init_nodes_a(t_stack **stack_a, t_stack **stack_b)
     ft_index(stack_a);
     ft_index(stack_b);
     ft_target_b(stack_a, stack_b);
-    ft_cost_analysis(stack_a, stack_b);
+    ft_cost_analysis_a(stack_a, stack_b);
     ft_find_cheapest(stack_a);
 }
 
@@ -39,8 +39,8 @@ void    ft_index(t_stack **stack)
             temp->above_median = 1;
         else
             temp->above_median = 0;
-        temp = temp->next;
         i++;
+        temp = temp->next;
     }
 }
 void    ft_target_b(t_stack **stack_a, t_stack **stack_b)
@@ -72,7 +72,7 @@ void    ft_target_b(t_stack **stack_a, t_stack **stack_b)
     }
 }
 
-void    ft_cost_analysis(t_stack **stack_a, t_stack **stack_b)
+void    ft_cost_analysis_a(t_stack **stack_a, t_stack **stack_b)
 {
     int cost;
     t_stack *temp_a;

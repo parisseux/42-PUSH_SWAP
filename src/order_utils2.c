@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:17:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/28 17:10:13 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:51:35 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void reverse_rotate_node_and_target_node(t_stack **stack_a, t_stack **stack_b, t
     while (*stack_a != node && *stack_b != node->target_node)
         ft_rrr(stack_a, stack_b);
     ft_index(stack_a);
-    ft_index(stack_b);
-
-    
+    ft_index(stack_b); 
 }
 void move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 {
@@ -49,15 +47,6 @@ void move_a_to_b(t_stack **stack_a, t_stack **stack_b)
     ft_node_at_the_top_stack_b(stack_b, cheapest_node->target_node);
     ft_pb(stack_a, stack_b);
 }
-/*t_stack *init_nodes_b(t_stack **stack_a, t_stack **stack_b)
-{
-    
-}
-
-void move_b_to_a(t_stack **stack_a, t_stack **stack_b)
-{
-    
-}*/
 
 void    ft_node_at_the_top_stack_a(t_stack **stack, t_stack *node)
 {

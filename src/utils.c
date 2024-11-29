@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:56:30 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/26 13:56:55 by pchatagn         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:02:09 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
