@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:56:30 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/29 15:02:09 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/30 19:20:31 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_str(char *str)
+void	ft_print_str(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    { 
-        write(1, &str[i], 1);
-        i++;
-    }
-    write(1, "\n", 1);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
 }
 
 long	ft_atol(const char *str)

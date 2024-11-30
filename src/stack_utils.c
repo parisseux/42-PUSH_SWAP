@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:13:06 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/27 16:14:01 by parissachat      ###   ########.fr       */
+/*   Updated: 2024/11/30 19:08:46 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_size_stack(t_stack *stack)
 {
-	int i;
-	
+	int	i;
+
 	if (!stack)
-  	  return (0);
+		return (0);
 	i = 0;
 	while (stack)
 	{
@@ -26,9 +26,10 @@ int	ft_size_stack(t_stack *stack)
 	}
 	return (i);
 }
+
 t_stack	*ft_new_node(int value)
 {
-	t_stack *head;
+	t_stack	*head;
 
 	head = (t_stack *)malloc(1 * sizeof(t_stack));
 	if (!head)
@@ -41,14 +42,13 @@ t_stack	*ft_new_node(int value)
 	head->index = 0;
 	head->push_cost = 0;
 	head->target_node = NULL;
-	
 	return (head);
 }
 
 void	ft_create_or_add_back(t_stack **head, int value)
 {
-	t_stack *last;
-	t_stack *new;
+	t_stack	*last;
+	t_stack	*new;
 
 	if (*head == NULL)
 	{
@@ -65,9 +65,10 @@ void	ft_create_or_add_back(t_stack **head, int value)
 	new->prev = last;
 }
 
-void    ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
+
 	while (*stack)
 	{
 		temp = *stack;
@@ -76,13 +77,15 @@ void    ft_free_stack(t_stack **stack)
 	}
 }
 
-void print_stack(t_stack *head)
+void	print_stack(t_stack *head)
 {
-    t_stack *temp = head;
-    while (temp)
-    {
-        printf("%ld ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
+	t_stack	*temp;
+
+	temp = head;
+	while (temp)
+	{
+		printf("%ld ", temp->data);
+		temp = temp->next;
+	}
+	printf("\n");
 }
