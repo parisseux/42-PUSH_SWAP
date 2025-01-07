@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 16:39:35 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/30 19:16:26 by pchatagn         ###   ########.fr       */
+/*   Created: 2025/01/07 12:10:09 by pchatagn          #+#    #+#             */
+/*   Updated: 2025/01/07 17:44:39 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,5 @@ int	ft_find_index_of_min(t_stack *head)
 	}
 	return (index);
 }
+
+

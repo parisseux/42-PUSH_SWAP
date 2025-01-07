@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+         #
+#    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 09:30:05 by pchatagn          #+#    #+#              #
-#    Updated: 2024/10/11 14:59:59 by pchatagn         ###   ########.fr        #
+#    Updated: 2025/01/04 15:15:59 by parissachat      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ FILES = ft_atoi \
 				ft_putstr_fd \
 				ft_putendl_fd \
 				ft_putnbr_fd \
+				get_next_line_utils \
+				get_next_line \
 
 FILESBONUS = ft_lstnew \
 			ft_lstadd_front \
@@ -72,19 +74,19 @@ OBJBONUS = $(SRCSBONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(AR) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
 
 bonus: $(OBJBONUS)
-		$(AR) $(NAME) $(OBJBONUS)
+	@$(AR) $(NAME) $(OBJBONUS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(OBJBONUS)
+	@$(RM) $(OBJS) $(OBJBONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all bonus
 

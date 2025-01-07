@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:52:23 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/10/09 17:56:07 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:11:45 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,3 @@ char	*ft_itoa(int n)
 	number = ft_fill_str(num, number, i, len_number);
 	return (number);
 }
-
-// #include <stdio.h>
-// int main (void)
-// {
-//     int i = -2456;
-//     char *str = ft_itoa(i);
-//     printf("%s", str);
-//     free(str);
-//     return (0);
-// }

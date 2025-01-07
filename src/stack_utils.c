@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:13:06 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/30 19:08:46 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:57:23 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_create_or_add_back(t_stack **head, int value)
 		return ;
 	}
 	last = *head;
-	while (last -> next != NULL)
+	while (last->next != NULL)
 		last = last->next;
 	new = ft_new_node(value);
 	if (!new)
@@ -65,19 +65,7 @@ void	ft_create_or_add_back(t_stack **head, int value)
 	new->prev = last;
 }
 
-void	ft_free_stack(t_stack **stack)
-{
-	t_stack	*temp;
-
-	while (*stack)
-	{
-		temp = *stack;
-		*stack = (*stack)->next;
-		free(temp);
-	}
-}
-
-void	print_stack(t_stack *head)
+void	ft_print_stack(t_stack *head)
 {
 	t_stack	*temp;
 

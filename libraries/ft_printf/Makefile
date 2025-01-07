@@ -6,7 +6,7 @@
 #    By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/11 14:57:15 by pchatagn          #+#    #+#              #
-#    Updated: 2024/10/15 17:05:53 by pchatagn         ###   ########.fr        #
+#    Updated: 2024/12/05 15:26:22 by pchatagn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,18 +29,18 @@ FILES = ft_printf.c \
 OBJ = $(FILES:.c=.o)
 
 .c.o : 
-	${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	$(AR) $(NAME) $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean 
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all 
 

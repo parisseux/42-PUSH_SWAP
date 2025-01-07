@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:51:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/07 16:32:48 by pchatagn         ###   ########.fr       */
+/*   Created: 2025/01/07 11:56:17 by pchatagn          #+#    #+#             */
+/*   Updated: 2025/01/07 12:00:12 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_free_split(char **split)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	i;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 2)
-		return (1);
-	stack_a = ft_create_stack_a(argc, argv);
-	
-	if (!stack_a)
-		return (1);
-	if (ft_size_stack(stack_a) < 2)
+	i = 0;
+	if (!split)
+		return ;
+	while (split[i])
 	{
-		ft_free_stack(&stack_a);
-		ft_error_message();
-		return (1);
+		free(split[i]);
+		i++;
 	}
-	if (!ft_check_stack(&stack_a))
-		ft_order(&stack_a, &stack_b);
-	ft_free_stack(&stack_a);
-	ft_free_stack(&stack_b);
-	return (0);
+	free(split);
+}
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	while (*stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+}
+
+void	ft_cleanup(t_stack **stack, char **split_argv)
+{
+	if (stack)
+		ft_free_stack(stack);
+	if (split_argv)
+		ft_free_split(split_argv);
 }

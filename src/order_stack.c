@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/30 17:49:12 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:43:42 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 		ft_order_stack_size_4(stack_a, stack_b);
 	else if (ft_size_stack(*stack_a) >= 5)
 		ft_order_big_stack(stack_a, stack_b);
+	
 }
 
 void	ft_order_stack_size_3(t_stack **head)

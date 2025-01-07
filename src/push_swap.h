@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:37:20 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/30 18:59:44 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:44:03 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,17 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-//fonctions utils
+typedef struct s_operations {
+    char            *operation;
+    struct s_operations *next;
+} t_operations;
+//utils
 t_stack	*ft_new_node(int value);
 t_stack	*ft_create_stack_a(int argc, char **argv);
 void	ft_create_or_add_back(t_stack **head, int value);
 void	ft_create_or_add_front(t_stack **head, int value);
 void	ft_free_stack(t_stack **stack);
-void	print_stack(t_stack *head);
+void	ft_print_stack(t_stack *head);
 int		ft_check_number(char *argv);
 int		ft_check_doublon(t_stack **head);
 void	ft_error_message(void);
@@ -72,7 +76,7 @@ void	ft_ra(t_stack **head);
 void	ft_rb(t_stack **head);
 void	ft_rr(t_stack **head_a, t_stack**head_b);
 
-//fonctions to order stack
+//order
 void	ft_order(t_stack **stack_a, t_stack **stack_b);
 int		ft_check_stack(t_stack **head);
 void	ft_order_stack_size_3(t_stack **head);

@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/11/30 18:00:15 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:22:25 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ void	init_nodes_a(t_stack **stack_a, t_stack **stack_b)
 	ft_cost_analysis_a(stack_a, stack_b);
 	ft_find_cheapest(stack_a);
 }
-
 void	ft_index(t_stack **stack)
 {
 	int		i;
 	int		median;
 	t_stack	*temp;
 
-	if (!(*stack) || !stack)
+	if (!(*stack))
 		return ;
 	i = 0;
 	median = ft_size_stack(*stack) / 2;

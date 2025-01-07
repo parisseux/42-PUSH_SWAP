@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:51:15 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/30 18:21:46 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:13:27 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,26 +107,29 @@ void	ft_cost_analysis_b(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_min_on_top(t_stack **stack_a)
 {
-	t_stack	*min;
-	int		i;
+    t_stack	*min;
+    int		i;
 
-	min = ft_find_min(*stack_a);
-	if (min->above_median == 1)
-	{
-		i = min->index;
-		while (i > 0)
-		{
-			ft_ra(stack_a);
-			i--;
-		}
-	}
-	else
-	{
-		i = ft_size_stack(*stack_a) - min->index;
-		while (i > 0)
-		{
-			ft_rra(stack_a);
-			i--;
-		}
-	}
+    min = ft_find_min(*stack_a);
+    i = min->index;
+
+    // If the minimum element is above the median, rotate up (ra)
+    if (min->above_median == 1)
+    {
+        while (i > 0)
+        {
+            ft_ra(stack_a);
+            i--;
+        }
+    }
+    // If the minimum element is below the median, rotate down (rra)
+    else
+    {
+        i = ft_size_stack(*stack_a) - i;
+        while (i > 0)
+        {
+            ft_rra(stack_a);
+            i--;
+        }
+    }
 }

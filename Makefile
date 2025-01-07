@@ -6,7 +6,7 @@
 #    By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 11:37:38 by pchatagn          #+#    #+#              #
-#    Updated: 2024/11/30 19:26:52 by pchatagn         ###   ########.fr        #
+#    Updated: 2025/01/07 14:37:12 by pchatagn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,13 @@ SRCDIR = src
 OBJDIR = obj
 
 FILES = main.c \
-		check_input.c \
-		create_stack.c \
+		free.c \
+		create_check_stack.c \
 		order_stack.c \
-		swap.c \
-		rotate.c \
-		reverse_rotate.c \
-		push.c \
+		op_swap.c \
+		op_rotate.c \
+		op_reverse_rotate.c \
+		op_push.c \
 		utils.c \
 		stack_utils.c \
 		stack_utils2.c \
@@ -41,10 +41,12 @@ FT_PRINTF = $(LIBDIR)/ft_printf/libftprintf.a
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 OBJ = $(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 
-all: $(NAME)
+SUCCESS = "\033[1;35mSuccessful compilation!\033[0m"
 
+all: $(NAME)
+	@echo $(SUCCESS)
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 
 $(LIBFT):
 	@make all bonus -C $(LIBDIR)/libft
@@ -54,19 +56,17 @@ $(FT_PRINTF):
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)  # Ensure obj/ directory exists
-	$(CC) $(CFLAGS) -c $< -o $@
-
+	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	$(RM) $(OBJ)
-	@rmdir $(OBJDIR) 2>/dev/null || true  # Remove obj/ only if empty
-	@make all bonus -C $(LIBDIR)/libft clean
-	@make -C $(LIBDIR)/ft_printf clean
+	@$(RM) $(OBJ)
+	@rmdir $(OBJDIR) 2>/dev/null || true  
+	@make -C $(LIBDIR)/libft clean      
+	@make -C $(LIBDIR)/ft_printf clean 
 
 fclean: clean
-	$(RM) $(NAME)
-	@make all bonus -C $(LIBDIR)/libft fclean
-	@make -C $(LIBDIR)/ft_printf fclean
-
+	@$(RM) $(NAME)
+	@make -C $(LIBDIR)/libft fclean     
+	@make -C $(LIBDIR)/ft_printf fclean  
 re: fclean all
 
 .PHONY: all clean fclean re
