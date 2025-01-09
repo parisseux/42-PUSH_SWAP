@@ -6,7 +6,7 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 01:14:39 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:15:39 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:38:48 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft.h"
 # include "ft_printf.h"
 # include "stack.h"
-
 
 # include <stdio.h>
 # include <stdlib.h>

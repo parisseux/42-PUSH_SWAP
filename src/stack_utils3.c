@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:10:09 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 21:02:01 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:38 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 t_stack	*ft_find_min(t_stack *stack)
 {

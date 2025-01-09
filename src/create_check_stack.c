@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_stack_and_check_input.c                     :+:      :+:    :+:   */
+/*   create_check_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 12:06:28 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/07 12:00:58 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:40:25 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	ft_validate_args(char **argv, int j, t_stack **stack, char **split_argv)
 {

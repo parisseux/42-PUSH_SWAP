@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:13:06 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 19:47:09 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:32 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	ft_size_stack(t_stack *stack)
 {

@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:36:24 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/08 20:22:20 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:09 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	ft_reverse_rotate(t_stack **head)
 {

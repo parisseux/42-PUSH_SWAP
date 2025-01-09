@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/08 22:04:30 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:21 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int is_sorted_and_empty_b(t_stack **stack_a, t_stack **stack_b)
 {

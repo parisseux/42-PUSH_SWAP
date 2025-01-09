@@ -6,7 +6,7 @@
 #    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 11:37:38 by pchatagn          #+#    #+#              #
-#    Updated: 2025/01/09 13:57:36 by parissachat      ###   ########.fr        #
+#    Updated: 2025/01/09 14:36:21 by parissachat      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 BONUSNAME = checker
 LIBDIR = libraries
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I$(LIBDIR)/libft -I$(LIBDIR)/ft_printf -Iinclude -g
+CFLAGS = -Wall -Werror -Wextra -I./include -I$(LIBDIR)/libft -I$(LIBDIR)/ft_printf -g
+
 RM = rm -f
 
 SRCDIR = src
@@ -38,7 +39,7 @@ FILES = main.c \
 		order_utils2.c \
 		order_utils3.c \
 		optimisation.c \
-		normalise.c 
+		normalise.c
 
 BONUS_FILES = main_bonus.c \
 			free_bonus.c \

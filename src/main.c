@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:51:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 21:53:26 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:40:52 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	main(int argc, char **argv)
 {

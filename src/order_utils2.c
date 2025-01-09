@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:17:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 22:03:10 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:27 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	rotate_node_and_t_node(t_stack **s_a, t_stack **s_b, t_stack *node, t_inst **inst)
 {

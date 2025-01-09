@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 21:05:45 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:23 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	init_nodes_a(t_stack **stack_a, t_stack **stack_b)
 {

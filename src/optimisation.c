@@ -6,11 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:00:36 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/08 21:51:14 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:19 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void    ft_add_instruction(t_inst **head, const char *inst)
 {

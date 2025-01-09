@@ -6,7 +6,7 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:37:20 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/09 11:09:30 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:40:36 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-
 # include "stack.h"
 
 t_stack	*ft_new_node(int value);
