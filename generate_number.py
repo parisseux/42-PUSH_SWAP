@@ -12,5 +12,5 @@ def generate_random_list(n, lower_bound=-10000, upper_bound=10000):
 
     return list(unique_numbers)
 
-random_list = generate_random_list(100)
+random_list = generate_random_list(500)
 print(" ".join(map(str, random_list)))

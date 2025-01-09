@@ -6,7 +6,7 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:11:18 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:10:25 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 20:21:53 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,6 @@ t_stack	*ft_new_node_bonus(int value)
 	return (head);
 }
 
-void	ft_print_stack_bonus(t_stack *head)
-{
-	t_stack	*temp;
-
-	temp = head;
-	while (temp)
-	{
-		printf("%ld ", temp->data);
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
 int ft_is_stack_order_bonus(t_stack *a, t_stack *b)
 {
 	t_stack *temp;
@@ -87,4 +74,17 @@ int	ft_size_stack_bonus(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+void	ft_delete_first_node_bonus(t_stack **head)
+{
+	t_stack	*temp;
+
+	if (!(*head) || !head)
+		return ;
+	temp = *head;
+	*head = (*head)->next;
+	if (*head)
+		(*head)->prev = NULL;
+	free(temp);
 }

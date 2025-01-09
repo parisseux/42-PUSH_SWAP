@@ -6,7 +6,7 @@
 #    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 11:37:38 by pchatagn          #+#    #+#              #
-#    Updated: 2025/01/09 14:36:21 by parissachat      ###   ########.fr        #
+#    Updated: 2025/01/09 20:22:52 by parissachat      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,29 +24,26 @@ BONUSDIR = bonus
 BONUSOBJDIR = bonus_obj
 
 FILES = main.c \
-		free.c \
 		create_check_stack.c \
 		order_stack.c \
+		normalise.c \
+		optimisation.c \
+		free.c \
 		op_swap.c \
 		op_rotate.c \
 		op_reverse_rotate.c \
 		op_push.c \
-		utils.c \
+		inst_utils.c \
 		stack_utils.c \
 		stack_utils2.c \
-		stack_utils3.c \
 		order_utils.c \
 		order_utils2.c \
-		order_utils3.c \
-		optimisation.c \
-		normalise.c
-
+		
 BONUS_FILES = main_bonus.c \
 			free_bonus.c \
 			bonus_utils.c \
 			bonus_utils2.c \
 			bonus_utils3.c \
-			implement_operations.c \
 			op_push_bonus.c \
 			op_reverse_rotate_bonus.c \
 			op_rotate_bonus.c \

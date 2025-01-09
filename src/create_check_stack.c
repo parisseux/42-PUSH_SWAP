@@ -6,35 +6,12 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 12:06:28 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:40:25 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 20:07:56 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-int	ft_validate_args(char **argv, int j, t_stack **stack, char **split_argv)
-{
-	int	value;
-
-	while (argv[j])
-	{
-		if (!(ft_check_number(argv[j])))
-		{
-			ft_cleanup(stack, split_argv);
-			return (0);
-		}
-		value = ft_atol(argv[j]);
-		ft_create_or_add_back(stack, value);
-		j++;
-	}
-	if (!ft_check_doublon(stack))
-	{
-		ft_cleanup(stack, split_argv);
-		return (0);
-	}
-	return (1);
-}
 
 t_stack	*ft_create_stack_a(int argc, char **argv)
 {
@@ -59,6 +36,30 @@ t_stack	*ft_create_stack_a(int argc, char **argv)
 		ft_free_split(split_argv);
 	return (stack);
 }
+
+int	ft_validate_args(char **argv, int j, t_stack **stack, char **split_argv)
+{
+	int	value;
+
+	while (argv[j])
+	{
+		if (!(ft_check_number(argv[j])))
+		{
+			ft_cleanup(stack, split_argv);
+			return (0);
+		}
+		value = ft_atol(argv[j]);
+		ft_create_or_add_back(stack, value);
+		j++;
+	}
+	if (!ft_check_doublon(stack))
+	{
+		ft_cleanup(stack, split_argv);
+		return (0);
+	}
+	return (1);
+}
+
 int	ft_check_doublon(t_stack **head)
 {
 	t_stack	*temp;
@@ -115,4 +116,3 @@ void	ft_error_message(void)
 	write(2, "- No duplicates are allowed.\n", 30);
 	write(2, "- At least two numbers are required.\n", 38);
 }
-

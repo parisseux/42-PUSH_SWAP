@@ -6,7 +6,7 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:24:16 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:12 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 19:51:47 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,12 @@ void	ft_rr(t_stack **head_a, t_stack**head_b, t_inst **inst)
 	ft_rotate(head_a);
 	ft_rotate(head_b);
 	ft_add_instruction(inst, "rr");
+}
+
+void	ft_rotate_both(t_stack **a, t_stack **b, t_stack *node, t_inst **inst)
+{
+	while (*a != node->target_node && *b != node)
+		ft_rr(a, b, inst);
+	ft_index(*a);
+	ft_index(*b);
 }

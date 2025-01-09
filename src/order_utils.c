@@ -6,36 +6,36 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:23 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 20:06:25 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	init_nodes_a(t_stack **stack_a, t_stack **stack_b)
+void ft_init_nodes(t_stack *a, t_stack *b)
 {
-	ft_index(stack_a);
-	ft_index(stack_b);
-	ft_target_b(stack_a, stack_b);
-	ft_cost_analysis_a(stack_a, stack_b);
-	ft_find_cheapest(stack_a);
+	ft_index(a);
+	ft_index(b);
+	ft_find_target_node(a, b);
+	ft_calculate_cost(a, b);
+	ft_find_cheapest(b);
 }
-void	ft_index(t_stack **stack)
+
+void	ft_index(t_stack *stack)
 {
 	int		i;
 	int		median;
 	t_stack	*temp;
 
-	if (!(*stack))
+	if (stack == NULL)
 		return ;
 	i = 0;
-	median = ft_size_stack(*stack) / 2;
-	temp = *stack;
+	median = ft_size_stack(stack) / 2;
+	temp = stack;
 	while (temp)
 	{
 		temp->index = i;
-		if (i < median)
+		if (i <= median)
 			temp->above_median = 1;
 		else
 			temp->above_median = 0;
@@ -44,92 +44,77 @@ void	ft_index(t_stack **stack)
 	}
 }
 
-void	ft_target_b(t_stack **stack_a, t_stack **stack_b)
+void ft_find_target_node(t_stack *a, t_stack *b)
 {
-	t_stack	*t_b;
-	t_stack	*t_a;
-	t_stack	*target_node;
-	long	diff;
-
-	t_a = *stack_a;
-	while (t_a)
+	t_stack *temp;
+	t_stack *t_node;
+	long temp_best;
+	
+	while (b)
 	{
-		t_b = *stack_b;
-		target_node = NULL;
-		diff = __LONG_MAX__;
-		while (t_b)
+		temp_best = LONG_MAX;
+		temp = a;
+		while (temp)
 		{
-			if ((t_b->data < t_a->data) && (diff > (t_a->data - t_b->data)))
+			if (temp->data > b->data && temp->data < temp_best)
 			{
-				target_node = t_b;
-				diff = t_a->data - target_node->data;
+				temp_best = temp->data;
+				t_node = temp;
 			}
-			t_b = t_b->next;
+			temp = temp->next;
 		}
-		if (!target_node)
-			target_node = ft_find_max(*stack_b);
-		t_a->target_node = target_node;
-		t_a = t_a->next;
+		if (temp_best == LONG_MAX)
+			b->target_node = ft_find_smallest(a);
+		else 
+			b->target_node = t_node;
+		b = b->next;
 	}
 }
 
-void	ft_cost_analysis_a(t_stack **stack_a, t_stack **stack_b)
+void ft_calculate_cost(t_stack *a, t_stack *b)
 {
-	int		cost;
-	t_stack	*ta;
+	int size_a;
+	int size_b;
 
-	ta = *stack_a;
-	while (ta != NULL)
+	size_a = ft_size_stack(a);
+	size_b = ft_size_stack(b);
+	while (b)
 	{
-		cost = 0;
-		if (ta->above_median == 1 && ta->target_node->above_median == 1)
-		{
-			if (ta->target_node->index < ta->index)
-				cost = ta->index;
-			else
-				cost = ta->target_node->index;
-		}
-		else if (ta->above_median == 0 && ta->target_node->above_median == 0)
-		{
-			if (ta->target_node->index < ta->index)
-				cost = ft_size_stack(*stack_a) - ta->index;
-			else
-				cost = ft_size_stack(*stack_b) - ta->target_node->index;
-		}
-		else if (ta->above_median == 1 && ta->target_node->above_median == 0)
-			cost = ta->index + ft_size_stack(*stack_b) - ta->target_node->index;
-		else if (ta->above_median == 0 && ta->target_node->above_median == 1)
-			cost = ta->target_node->index + ft_size_stack(*stack_a) - ta->index;
-		ta->push_cost = cost;
-		ta = ta->next;
+		b->push_cost = b->index;
+		if (b->above_median == 0)
+			b->push_cost = size_b - (b->index);
+		if (b->target_node->above_median == 1)
+			b->push_cost += b->target_node->index;
+		else 
+			b->push_cost += size_a - (b->target_node->index);
+		b = b->next;
 	}
 }
 
-void	ft_find_cheapest(t_stack **stack)
+void ft_find_cheapest(t_stack *b)
 {
-	int		temp_cheapest_value;
-	t_stack	*temp_cheapest_node;
-	t_stack	*temp;
-
-	if (!(*stack))
+	int best;
+	t_stack *cheap_node;
+	
+	if (b == NULL)
 		return ;
-	temp = *stack;
-	while (temp)
+	best = INT_MAX;
+	while (b)
 	{
-		temp->cheapest = 0;
-		temp = temp->next;
-	}
-	temp = *stack;
-	temp_cheapest_value = temp->push_cost;
-	temp_cheapest_node = temp;
-	while (temp)
-	{
-		if (temp->push_cost < temp_cheapest_value)
+		if (b->push_cost < best)
 		{
-			temp_cheapest_node = temp;
-			temp_cheapest_value = temp->push_cost;
+			best = b->push_cost;
+			cheap_node = b;
 		}
-		temp = temp->next;
+		b = b->next;
 	}
-	temp_cheapest_node->cheapest = 1;
+	cheap_node->cheapest = 1;
+}
+void ft_swap_long(long *tab, int i)
+{
+	long temp;
+
+	temp = tab[i];
+	tab[i] = tab [i + 1];
+	tab[i + 1] = temp;
 }

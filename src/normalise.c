@@ -6,12 +6,11 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:00:21 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:04 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 19:51:06 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void ft_normalise_stack(t_stack *head)
 {
@@ -34,6 +33,7 @@ void ft_normalise_stack(t_stack *head)
     ft_replace_data_with_normalised(head);
 	free(tab);
 }
+
 void ft_replace_data_with_normalised(t_stack *head)
 {
     t_stack *temp;
@@ -61,6 +61,7 @@ void ft_fill_and_order_tab(t_stack *head, long *tab, int size)
 	}
 	ft_order_tab(tab, size);
 }
+
 void ft_order_tab(long *tab, int size)
 {
 	int check;
@@ -82,14 +83,6 @@ void ft_order_tab(long *tab, int size)
 				i++;
 		}
 	}
-}
-
-void ft_swap_long(long *tab, int i)
-{
-	long temp;
-	temp = tab[i];
-	tab[i] = tab [i + 1];
-	tab[i + 1] = temp;
 }
 
 void ft_add_data_norm(t_stack *head, long *tab, int size)

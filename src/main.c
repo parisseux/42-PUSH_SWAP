@@ -6,12 +6,11 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:51:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/09 14:40:52 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 20:15:21 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	main(int argc, char **argv)
 {
@@ -32,7 +31,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	ft_normalise_stack(stack_a);
-	if (!ft_check_stack(&stack_a))
+	if (!ft_check_stack(stack_a))
 		ft_order(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);

@@ -6,40 +6,26 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:00:36 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:19 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 19:52:31 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void    ft_add_instruction(t_inst **head, const char *inst)
+void 	ft_optimise_inst(t_inst *inst)
 {
-    t_inst *temp;
-    t_inst *new;
+	int size;
 
-    new = malloc(sizeof(t_inst));
-    if (!new)
-        exit(1);
-    new->inst = ft_strdup(inst);
-    if (!new->inst)
-    {
-        free(new);
-        exit(1);
-    }
-    new->next = NULL;
-    new->prev = NULL;
-    if (!*head)
-        *head = new;
-    else
-    {
-        temp = *head;
-        while (temp->next)
-            temp = temp->next;
-        temp->next = new;
-         new->prev = temp;
-    }
+	size = 0;
+	while (size != ft_nombre_instruction(inst))
+	{
+		size = ft_nombre_instruction(inst);
+		ft_check_inst1(inst);
+		ft_check_inst2(&inst);
+	}
+	ft_print_inst(inst);
 }
+
 void ft_changement_inst(t_inst *temp, char *new_inst)
 {
     t_inst *to_delete;
@@ -51,6 +37,7 @@ void ft_changement_inst(t_inst *temp, char *new_inst)
     free(to_delete->inst);
     free(to_delete);  
 }
+
 void ft_check_inst1(t_inst *head)
 {
     t_inst *temp;
@@ -103,6 +90,7 @@ void ft_remove_inst(t_inst **head, t_inst *temp)
     free(to_delete2->inst);
     free(to_delete2);
 }
+
 void ft_check_inst2(t_inst **head)
 {
     t_inst *temp;
@@ -128,16 +116,4 @@ void ft_check_inst2(t_inst **head)
         else 
             temp = temp->next;
     }
-}
-
-void ft_print_inst(t_inst *head)
-{
-    t_inst *temp;
-
-    temp = head;
-    while (temp)
-    {
-        ft_print_str(temp->inst);
-        temp = temp->next;
-    }    
 }

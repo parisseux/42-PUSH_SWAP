@@ -6,12 +6,11 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:56:17 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/09 14:40:47 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 19:50:36 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_free_split(char **split)
 {
@@ -27,6 +26,7 @@ void	ft_free_split(char **split)
 	}
 	free(split);
 }
+
 void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*temp;

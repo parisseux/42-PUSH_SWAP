@@ -6,12 +6,11 @@
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:23:07 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:07 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 14:58:48 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_pa(t_stack **src, t_stack **dst, t_inst **inst)
 {
