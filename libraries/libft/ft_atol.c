@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 13:57:39 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 15:00:21 by parissachat      ###   ########.fr       */
+/*   Created: 2025/01/09 11:08:55 by parissachat       #+#    #+#             */
+/*   Updated: 2025/01/09 11:08:57 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+long	ft_atol(const char *str)
 {
-	size_t	i;
+	int	i;
+	int	count;
+	int	res;
 
-	if (n == 0)
-		return (0);
+	res = 0;
+	count = 0;
 	i = 0;
-	while (i < n && s1[i] && s2[i])
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		if (!((unsigned char)s1[i] == (unsigned char)s2[i]))
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		count = 1;
 		i++;
 	}
-	if (i < n)
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	if (count == 1)
+		return (-res);
+	return (res);
 }

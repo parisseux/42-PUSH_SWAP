@@ -6,7 +6,7 @@
 #    By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 09:30:05 by pchatagn          #+#    #+#              #
-#    Updated: 2025/01/04 15:15:59 by parissachat      ###   ########.fr        #
+#    Updated: 2025/01/09 11:10:03 by parissachat      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ AR = ar rcs
 RM = rm -f
 
 FILES = ft_atoi \
+				ft_atol \
 				ft_bzero \
 				ft_calloc \
 				ft_isalnum \
@@ -37,6 +38,7 @@ FILES = ft_atoi \
 				ft_strlcpy \
 				ft_strlen \
 				ft_strncmp \
+				ft_strcmp \
 				ft_strnstr \
 				ft_strrchr \
 				ft_strtrim \

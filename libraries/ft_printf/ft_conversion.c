@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conversion.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:54:39 by pchatagn          #+#    #+#             */
-/*   Updated: 2024/10/16 11:52:12 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:08:20 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
