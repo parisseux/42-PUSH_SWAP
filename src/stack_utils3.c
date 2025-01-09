@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:10:09 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/07 17:44:39 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 21:02:01 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_find_index_of_min(t_stack *head)
 			index = count;
 		}
 		count++;
-		head = head ->next;
+		head = head->next;
 	}
 	return (index);
 }

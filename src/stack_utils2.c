@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:25:36 by parissachat       #+#    #+#             */
-/*   Updated: 2024/11/30 19:12:47 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 20:32:51 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

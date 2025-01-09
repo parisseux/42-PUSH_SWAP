@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:51:15 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/07 15:13:27 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:42:08 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_nodes_b(t_stack **stack_a, t_stack **stack_b)
 	ft_find_cheapest(stack_b);
 }
 
-void	move_b_to_a(t_stack **stack_a, t_stack **stack_b)
+void	move_b_to_a(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
 {
 	t_stack	*cheapest_node;
 	t_stack	*temp;
@@ -35,13 +35,13 @@ void	move_b_to_a(t_stack **stack_a, t_stack **stack_b)
 	cheapest_node = temp;
 	if (cheapest_node->above_median == 1
 		&& cheapest_node->target_node->above_median == 1)
-		rotate_node_and_t_node(stack_b, stack_a, cheapest_node);
+		rotate_node_and_t_node(stack_b, stack_a, cheapest_node, inst);
 	if (cheapest_node->above_median == 0
 		&& cheapest_node->target_node->above_median == 0)
-		rev_rotate_node_and_t_node(stack_b, stack_a, cheapest_node);
-	ft_node_at_the_top_stack_a(stack_a, cheapest_node->target_node);
-	ft_node_at_the_top_stack_b(stack_b, cheapest_node);
-	ft_pa(stack_b, stack_a);
+		rev_rotate_node_and_t_node(stack_b, stack_a, cheapest_node, inst);
+	ft_node_at_the_top_stack_a(stack_a, cheapest_node->target_node, inst);
+	ft_node_at_the_top_stack_b(stack_b, cheapest_node, inst);
+	ft_pa(stack_b, stack_a, inst);
 }
 
 void	ft_target_a(t_stack **stack_a, t_stack **stack_b)
@@ -105,7 +105,7 @@ void	ft_cost_analysis_b(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	ft_min_on_top(t_stack **stack_a)
+void	ft_min_on_top(t_stack **stack_a,  t_inst **inst)
 {
     t_stack	*min;
     int		i;
@@ -118,7 +118,7 @@ void	ft_min_on_top(t_stack **stack_a)
     {
         while (i > 0)
         {
-            ft_ra(stack_a);
+            ft_ra(stack_a, inst);
             i--;
         }
     }
@@ -128,7 +128,7 @@ void	ft_min_on_top(t_stack **stack_a)
         i = ft_size_stack(*stack_a) - i;
         while (i > 0)
         {
-            ft_rra(stack_a);
+            ft_rra(stack_a, inst);
             i--;
         }
     }

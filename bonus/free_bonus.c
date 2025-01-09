@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   free_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 11:56:17 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/08 12:59:02 by parissachat      ###   ########.fr       */
+/*   Created: 2025/01/09 01:26:45 by parissachat       #+#    #+#             */
+/*   Updated: 2025/01/09 11:26:30 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_free_split(char **split)
+void ft_free_stack_bonus(t_stack *l)
+{
+    t_stack *t;
+    
+    while (l)
+    {
+        t = l->next;
+        free(l);
+        l = t;
+    }
+}
+
+void ft_clean_bonus(t_stack *a, t_stack *b)
+{
+    ft_free_stack_bonus(a);
+    ft_free_stack_bonus(b);
+}
+
+void	ft_free_split_bonus(char **split)
 {
 	int	i;
 
@@ -26,34 +44,11 @@ void	ft_free_split(char **split)
 	}
 	free(split);
 }
-void	ft_free_stack(t_stack **stack)
-{
-	t_stack	*temp;
 
-	while (*stack)
-	{
-		temp = *stack;
-		*stack = (*stack)->next;
-		free(temp);
-	}
-}
-
-void	ft_cleanup(t_stack **stack, char **split_argv)
+void	ft_cleanup_bonus(t_stack **stack, char **split_argv)
 {
 	if (stack)
-		ft_free_stack(stack);
+		ft_free_stack_bonus(*stack);
 	if (split_argv)
-		ft_free_split(split_argv);
-}
-
-void ft_free_instructions(t_inst *head)
-{
-    t_inst *temp;
-	
-    while (head) {
-        temp = head;
-        head = head->next;
-        free(temp->inst);
-        free(temp);
-    }
+		ft_free_split_bonus(split_argv);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/07 15:22:25 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 21:05:45 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_target_b(t_stack **stack_a, t_stack **stack_b)
 		diff = __LONG_MAX__;
 		while (t_b)
 		{
-			if (t_b->data < t_a->data && diff > (t_a->data - t_b->data))
+			if ((t_b->data < t_a->data) && (diff > (t_a->data - t_b->data)))
 			{
 				target_node = t_b;
 				diff = t_a->data - target_node->data;

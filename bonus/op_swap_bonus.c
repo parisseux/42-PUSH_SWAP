@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
+/*   op_swap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:16:47 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/08 20:21:41 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 13:58:48 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_swap(t_stack **stack)
+void	ft_swap_bonus(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -28,25 +28,22 @@ void	ft_swap(t_stack **stack)
 	*stack = second;
 }
 
-void	ft_sa(t_stack **stack, t_inst **inst)
+void	ft_sa_bonus(t_stack **stack)
 {
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	ft_swap(stack);
-	ft_add_instruction(inst, "sa");
+	ft_swap_bonus(stack);
 }
 
-void	ft_sb(t_stack **stack, t_inst **inst)
+void	ft_sb_bonus(t_stack **stack)
 {
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	ft_swap(stack);
-	ft_add_instruction(inst, "sb");
+	ft_swap_bonus(stack);
 }
 
-void	ft_ss(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
+void	ft_ss_bonus(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_swap(stack_a);
-	ft_swap(stack_b);
-	ft_add_instruction(inst, "ss");
+	ft_swap_bonus(stack_a);
+	ft_swap_bonus(stack_b);
 }

@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   bonus_utils3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:23:07 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 13:42:24 by parissachat      ###   ########.fr       */
+/*   Created: 2025/01/09 13:41:10 by parissachat       #+#    #+#             */
+/*   Updated: 2025/01/09 14:01:01 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_pa(t_stack **src, t_stack **dst, t_inst **inst)
+void	ft_delete_first_node_bonus(t_stack **head)
 {
-	if (!src || !(*src))
+	t_stack	*temp;
+
+	if (!(*head) || !head)
 		return ;
-	ft_create_or_add_front(dst, (*src)->data);
-	ft_delete_first_node(src);
-	ft_add_instruction(inst, "pa");
+	temp = *head;
+	*head = (*head)->next;
+	if (*head)
+		(*head)->prev = NULL;
+	free(temp);
 }
 
-void	ft_pb(t_stack **src, t_stack **dst, t_inst **inst)
+void	ft_create_or_add_front_bonus(t_stack **head, int value)
 {
-	if (!src || !(*src))
+	t_stack	*new;
+
+	new = ft_new_node_bonus(value);
+	if (!new)
 		return ;
-	ft_create_or_add_front(dst, (*src)->data);
-	ft_delete_first_node(src);
-	ft_add_instruction(inst, "pb");
+	if (*head == NULL)
+	{
+		*head = new;
+		return ;
+	}
+	new->next = *head;
+	(*head)->prev = new;
+	*head = new;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:51:26 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/07 16:32:48 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/08 21:53:26 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	stack_a = ft_create_stack_a(argc, argv);
-	
 	if (!stack_a)
 		return (1);
 	if (ft_size_stack(stack_a) < 2)
@@ -31,6 +30,7 @@ int	main(int argc, char **argv)
 		ft_error_message();
 		return (1);
 	}
+	ft_normalise_stack(stack_a);
 	if (!ft_check_stack(&stack_a))
 		ft_order(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);

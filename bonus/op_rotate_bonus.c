@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_rotate.c                                        :+:      :+:    :+:   */
+/*   op_rotate_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:24:16 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/08 20:48:38 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/09 13:58:43 by parissachat      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_rotate(t_stack **head)
+void	ft_rotate_bonus(t_stack **head)
 {
 	t_stack	*last;
 	t_stack	*second;
@@ -32,21 +32,18 @@ void	ft_rotate(t_stack **head)
 	*head = second;
 }
 
-void	ft_ra(t_stack **head, t_inst **inst)
+void	ft_ra_bonus(t_stack **head)
 {
-	ft_rotate(head);
-	ft_add_instruction(inst, "ra");
+	ft_rotate_bonus(head);
 }
 
-void	ft_rb(t_stack **head, t_inst **inst)
+void	ft_rb_bonus(t_stack **head)
 {
-	ft_rotate(head);
-	ft_add_instruction(inst, "rb");
+	ft_rotate_bonus(head);
 }
 
-void	ft_rr(t_stack **head_a, t_stack**head_b, t_inst **inst)
+void	ft_rr_bonus(t_stack **head_a, t_stack**head_b)
 {
-	ft_rotate(head_a);
-	ft_rotate(head_b);
-	ft_add_instruction(inst, "rr");
+	ft_rotate_bonus(head_a);
+	ft_rotate_bonus(head_b);
 }

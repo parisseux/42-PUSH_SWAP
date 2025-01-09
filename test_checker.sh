@@ -13,7 +13,6 @@ for ((i = 0 ; i < 100 ; i++ )); do
         echo "Checker output: $RESULT"
         echo "Operations performed: $(cat result.txt)"
         all_successful=false
-        break
     fi
 done
 
