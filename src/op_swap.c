@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 14:16:47 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:15 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 13:36:13 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_swap(t_stack **stack)
 {
@@ -45,7 +44,7 @@ void	ft_sb(t_stack **stack, t_inst **inst)
 	ft_add_instruction(inst, "sb");
 }
 
-void	ft_ss(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
+void	ft_ss(t_stack **stack_a, t_stack **stack_b, t_inst **inst)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);

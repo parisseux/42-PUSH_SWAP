@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 12:02:13 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 20:16:21 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 13:53:25 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_order(t_stack **stack_a, t_stack **stack_b)
 
 	inst = NULL;
 	if (ft_check_stack(*stack_a) == 1 && *stack_b == NULL)
-		return ; 
+		return ;
 	if (ft_size_stack(*stack_a) == 2)
 	{
 		ft_sa(stack_a, &inst);
@@ -42,7 +42,7 @@ void	ft_order_stack_size_3(t_stack **stack, t_inst **inst)
 	int	max_index;
 
 	if (ft_check_stack(*stack))
-        return ;
+		return ;
 	max_index = ft_find_index_of_max(*stack);
 	if (max_index == 0)
 		ft_ra(stack, inst);
@@ -52,12 +52,13 @@ void	ft_order_stack_size_3(t_stack **stack, t_inst **inst)
 		ft_sa(stack, inst);
 }
 
-void	ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
+void	ft_order_stack_size_4(t_stack **stack_a,
+			t_stack **stack_b, t_inst **inst)
 {
 	int	min_index;
 
 	if (ft_check_stack(*stack_a) == 1 && *stack_b == NULL)
-		return ; 
+		return ;
 	min_index = ft_find_index_of_min(*stack_a);
 	if (min_index == 1)
 		ft_sa(stack_a, inst);
@@ -69,17 +70,16 @@ void	ft_order_stack_size_4(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
 	else if (min_index == 3)
 		ft_rra(stack_a, inst);
 	if (ft_check_stack(*stack_a) == 1 && *stack_b == NULL)
-		return ; 
+		return ;
 	ft_pb(stack_a, stack_b, inst);
 	ft_order_stack_size_3(stack_a, inst);
 	ft_pa(stack_b, stack_a, inst);
 }
 
-void	ft_order_big_stack(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
+void	ft_order_big_stack(t_stack **stack_a, t_stack **stack_b, t_inst **inst)
 {
-	int size_a;
-	t_stack *smallest;
-	
+	int		size_a;
+
 	if (ft_check_stack(*stack_a) == 1 && *stack_b == NULL)
 		return ;
 	size_a = ft_size_stack(*stack_a);
@@ -95,19 +95,7 @@ void	ft_order_big_stack(t_stack **stack_a, t_stack **stack_b,  t_inst **inst)
 		ft_empty_b(stack_a, stack_b, inst);
 	}
 	if (ft_check_stack(*stack_a) == 1 && *stack_b == NULL)
-		return ; 
+		return ;
 	ft_index(*stack_a);
-	smallest = ft_find_smallest(*stack_a);
-	if (smallest->above_median)
-	{
-		while (*stack_a != smallest)
-			ft_ra(stack_a, inst);
-	}
-	else
-	{
-		while (*stack_a != smallest)
-			ft_rra(stack_a, inst);
-	}
-		
+	ft_put_smallest_on_top(stack_a, inst);
 }
-

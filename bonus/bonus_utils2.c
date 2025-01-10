@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:11:18 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 20:21:53 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 14:01:34 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_create_or_add_back_bonus(t_stack **head, int value)
+void	ft_create_or_add_back_bonus(t_stack_b **head, int value)
 {
-	t_stack	*last;
-	t_stack	*new;
+	t_stack_b	*last;
+	t_stack_b	*new;
 
 	if (*head == NULL)
 	{
@@ -32,11 +32,11 @@ void	ft_create_or_add_back_bonus(t_stack **head, int value)
 	new->prev = last;
 }
 
-t_stack	*ft_new_node_bonus(int value)
+t_stack_b	*ft_new_node_bonus(int value)
 {
-	t_stack	*head;
+	t_stack_b	*head;
 
-	head = (t_stack *)malloc(1 * sizeof(t_stack));
+	head = (t_stack_b *)malloc(1 * sizeof(t_stack_b));
 	if (!head)
 		return (NULL);
 	head->data = value;
@@ -45,11 +45,11 @@ t_stack	*ft_new_node_bonus(int value)
 	return (head);
 }
 
-int ft_is_stack_order_bonus(t_stack *a, t_stack *b)
+int	ft_is_stack_order_bonus(t_stack_b *a, t_stack_b *b)
 {
-	t_stack *temp;
- 
-	if (b || !a || !a->next )
+	t_stack_b	*temp;
+
+	if (b || !a || !a->next)
 		return (0);
 	temp = a;
 	while (temp->next)
@@ -61,7 +61,7 @@ int ft_is_stack_order_bonus(t_stack *a, t_stack *b)
 	return (1);
 }
 
-int	ft_size_stack_bonus(t_stack *stack)
+int	ft_size_stack_bonus(t_stack_b *stack)
 {
 	int	i;
 
@@ -76,9 +76,9 @@ int	ft_size_stack_bonus(t_stack *stack)
 	return (i);
 }
 
-void	ft_delete_first_node_bonus(t_stack **head)
+void	ft_delete_first_node_bonus(t_stack_b **head)
 {
-	t_stack	*temp;
+	t_stack_b	*temp;
 
 	if (!(*head) || !head)
 		return ;

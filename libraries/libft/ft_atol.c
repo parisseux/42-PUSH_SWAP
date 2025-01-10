@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:08:55 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 11:08:57 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 14:16:52 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long	ft_atol(const char *str)
 {
-	int	i;
-	int	count;
-	int	res;
+	int		i;
+	int		count;
+	long	res;
 
 	res = 0;
 	count = 0;

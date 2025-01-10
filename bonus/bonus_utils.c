@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:03:09 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 11:28:51 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 14:00:13 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_stack	*ft_create_stack_a_bonus(int argc, char **argv)
+t_stack_b	*ft_create_stack_a_bonus(int argc, char **argv)
 {
-	t_stack	*stack;
-	char	**split_argv;
-	int		j;
+	t_stack_b	*stack;
+	char		**split_argv;
+	int			j;
 
 	j = 1;
 	stack = NULL;
@@ -36,7 +36,8 @@ t_stack	*ft_create_stack_a_bonus(int argc, char **argv)
 	return (stack);
 }
 
-int	ft_validate_args_bonus(char **argv, int j, t_stack **stack, char **split_argv)
+int	ft_validate_args_bonus(char **argv,
+	int j, t_stack_b **stack, char **split_argv)
 {
 	int	value;
 
@@ -59,10 +60,10 @@ int	ft_validate_args_bonus(char **argv, int j, t_stack **stack, char **split_arg
 	return (1);
 }
 
-int	ft_check_doublon_bonus(t_stack **head)
+int	ft_check_doublon_bonus(t_stack_b **head)
 {
-	t_stack	*temp;
-	t_stack	*check;
+	t_stack_b	*temp;
+	t_stack_b	*check;
 
 	if (!head || !(*head))
 		return (1);
@@ -115,4 +116,3 @@ void	ft_error_message_bonus(void)
 	write(2, "- No duplicates are allowed.\n", 30);
 	write(2, "- At least two numbers are required.\n", 38);
 }
-

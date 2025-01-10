@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:25:36 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 20:04:13 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 13:53:41 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,28 @@ int	ft_check_stack(t_stack *head)
 	return (1);
 }
 
+void	ft_swap_long(long *tab, int i)
+{
+	long	temp;
+
+	temp = tab[i];
+	tab[i] = tab [i + 1];
+	tab[i + 1] = temp;
+}
+
+void	ft_put_smallest_on_top(t_stack **stack_a, t_inst **inst)
+{
+	t_stack	*smallest;
+
+	smallest = ft_find_smallest(*stack_a);
+	if (smallest->above_median)
+	{
+		while (*stack_a != smallest)
+			ft_ra(stack_a, inst);
+	}
+	else
+	{
+		while (*stack_a != smallest)
+			ft_rra(stack_a, inst);
+	}
+}

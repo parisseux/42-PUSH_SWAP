@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   create_check_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 12:06:28 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/09 20:07:56 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 14:23:41 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 t_stack	*ft_create_stack_a(int argc, char **argv)
 {
@@ -30,33 +29,35 @@ t_stack	*ft_create_stack_a(int argc, char **argv)
 		j = 0;
 		argv = split_argv;
 	}
-	if (!ft_validate_args(argv, j, &stack, split_argv))
+	if (!ft_validate_args(argv, j, &stack))
+	{
+		ft_error_message();
+		ft_cleanup(&stack, split_argv);
 		return (NULL);
+	}
 	if (split_argv)
 		ft_free_split(split_argv);
 	return (stack);
 }
 
-int	ft_validate_args(char **argv, int j, t_stack **stack, char **split_argv)
+int	ft_validate_args(char **argv, int j, t_stack **stack)
 {
-	int	value;
+	int		value;
+	long	temp_value;
 
 	while (argv[j])
 	{
 		if (!(ft_check_number(argv[j])))
-		{
-			ft_cleanup(stack, split_argv);
 			return (0);
-		}
-		value = ft_atol(argv[j]);
+		temp_value = ft_atol(argv[j]);
+		if (temp_value < INT_MIN || temp_value > INT_MAX)
+			return (0);
+		value = (int)temp_value;
 		ft_create_or_add_back(stack, value);
 		j++;
 	}
 	if (!ft_check_doublon(stack))
-	{
-		ft_cleanup(stack, split_argv);
 		return (0);
-	}
 	return (1);
 }
 
@@ -74,10 +75,7 @@ int	ft_check_doublon(t_stack **head)
 		while (check)
 		{
 			if (temp->data == check->data)
-			{
-				ft_error_message();
 				return (0);
-			}
 			check = check->next;
 		}
 		temp = temp->next;
@@ -93,17 +91,11 @@ int	ft_check_number(char *argv)
 	if (argv[i] == '-' || argv[i] == '+')
 		i++;
 	if (argv[i] == '\0')
-	{
-		ft_error_message();
 		return (0);
-	}
 	while (argv[i])
 	{
 		if (!(argv[i] >= '0' && argv[i] <= '9'))
-		{
-			ft_error_message();
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -112,7 +104,7 @@ int	ft_check_number(char *argv)
 void	ft_error_message(void)
 {
 	write(2, "Error:\n", 7);
-	write(2, "- Input must contain only positive or negative numbers.\n", 57);
+	write(2, "- Input must contain only positive or negative integers.\n", 57);
 	write(2, "- No duplicates are allowed.\n", 30);
 	write(2, "- At least two numbers are required.\n", 38);
 }

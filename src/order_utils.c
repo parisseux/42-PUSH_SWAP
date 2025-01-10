@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   order_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parissachatagny <parissachatagny@studen    +#+  +:+       +#+        */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:45:56 by pchatagn          #+#    #+#             */
-/*   Updated: 2025/01/09 20:06:25 by parissachat      ###   ########.fr       */
+/*   Updated: 2025/01/10 13:33:10 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_init_nodes(t_stack *a, t_stack *b)
+void	ft_init_nodes(t_stack *a, t_stack *b)
 {
 	ft_index(a);
 	ft_index(b);
@@ -44,12 +44,12 @@ void	ft_index(t_stack *stack)
 	}
 }
 
-void ft_find_target_node(t_stack *a, t_stack *b)
+void	ft_find_target_node(t_stack *a, t_stack *b)
 {
-	t_stack *temp;
-	t_stack *t_node;
-	long temp_best;
-	
+	t_stack	*temp;
+	t_stack	*t_node;
+	long	temp_best;
+
 	while (b)
 	{
 		temp_best = LONG_MAX;
@@ -65,16 +65,16 @@ void ft_find_target_node(t_stack *a, t_stack *b)
 		}
 		if (temp_best == LONG_MAX)
 			b->target_node = ft_find_smallest(a);
-		else 
+		else
 			b->target_node = t_node;
 		b = b->next;
 	}
 }
 
-void ft_calculate_cost(t_stack *a, t_stack *b)
+void	ft_calculate_cost(t_stack *a, t_stack *b)
 {
-	int size_a;
-	int size_b;
+	int	size_a;
+	int	size_b;
 
 	size_a = ft_size_stack(a);
 	size_b = ft_size_stack(b);
@@ -85,17 +85,17 @@ void ft_calculate_cost(t_stack *a, t_stack *b)
 			b->push_cost = size_b - (b->index);
 		if (b->target_node->above_median == 1)
 			b->push_cost += b->target_node->index;
-		else 
+		else
 			b->push_cost += size_a - (b->target_node->index);
 		b = b->next;
 	}
 }
 
-void ft_find_cheapest(t_stack *b)
+void	ft_find_cheapest(t_stack *b)
 {
-	int best;
-	t_stack *cheap_node;
-	
+	int		best;
+	t_stack	*cheap_node;
+
 	if (b == NULL)
 		return ;
 	best = INT_MAX;
@@ -109,12 +109,4 @@ void ft_find_cheapest(t_stack *b)
 		b = b->next;
 	}
 	cheap_node->cheapest = 1;
-}
-void ft_swap_long(long *tab, int i)
-{
-	long temp;
-
-	temp = tab[i];
-	tab[i] = tab [i + 1];
-	tab[i + 1] = temp;
 }
