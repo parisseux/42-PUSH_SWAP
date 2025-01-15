@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:11:18 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/10 14:01:34 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:53:45 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	ft_is_stack_order_bonus(t_stack_b *a, t_stack_b *b)
 {
 	t_stack_b	*temp;
 
+	if (ft_size_stack_bonus(a) == 1)
+		return (1);
 	if (b || !a || !a->next)
 		return (0);
 	temp = a;

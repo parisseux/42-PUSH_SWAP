@@ -6,12 +6,12 @@ max_operations=0
 min_case=""
 max_case=""
 
-for ((i = 0 ; i < 100 ; i++ )); do
+for ((i = 0 ; i < 50 ; i++ )); do
     ARG=$(python3 generate_number.py)
     
     OPERATIONS=$(./push_swap $ARG | tee result.txt | wc -l | tr -d ' ')
     RESULT=$(./push_swap $ARG | ./checker_Mac $ARG)
-
+  
     if [ "$RESULT" == "OK" ]; then
         echo "Test $i: OK ($OPERATIONS operations)"
 

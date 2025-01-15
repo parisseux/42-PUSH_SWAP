@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:00:36 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/10 13:56:35 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:39:54 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void	ft_optimise_inst(t_inst *inst)
 {
-	int	size;
-
-	size = 0;
-	while (size != ft_nombre_instruction(inst))
-	{
-		size = ft_nombre_instruction(inst);
-		ft_check_inst1(inst);
-		ft_check_inst2(&inst);
-	}
+	ft_check_inst1(inst);
+	ft_check_inst2(&inst);
 	ft_print_inst(inst);
 }
 
