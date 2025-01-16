@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:25:36 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/10 13:53:41 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:33:51 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_check_stack(t_stack *head)
 {
 	t_stack	*temp;
 
-	if (!head || !head->next)
+	if (!head)
 		return (1);
 	temp = head;
 	while (temp->next)

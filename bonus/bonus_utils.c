@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:03:09 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/10 14:00:13 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:42:57 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,4 @@ void	ft_error_message_bonus(void)
 	write(2, "Error:\n", 7);
 	write(2, "- Input must contain only positive or negative numbers.\n", 57);
 	write(2, "- No duplicates are allowed.\n", 30);
-	write(2, "- At least two numbers are required.\n", 38);
 }

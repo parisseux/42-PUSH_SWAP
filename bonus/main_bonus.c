@@ -6,7 +6,7 @@
 /*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 01:06:56 by parissachat       #+#    #+#             */
-/*   Updated: 2025/01/15 16:51:21 by pchatagn         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:42:25 by pchatagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (ac < 2 || (ac == 2 && !av[1][0]))
-		return (1);
+		return (0);
 	a = ft_create_stack_a_bonus(ac, av);
 	if (!a)
 		return (1);
-	if (ft_size_stack_bonus(a) < 1)
+	if (ft_size_stack_bonus(a) < 2)
 	{
 		ft_free_stack_bonus(a);
 		ft_error_message_bonus();
